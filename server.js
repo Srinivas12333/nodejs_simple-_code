@@ -7,15 +7,40 @@ const PORT = 3001;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
-const profileDetails = {
-  name: 'SRINIVAS POOSA',
-  profile_image_url: 'https://assets.ccbp.in/frontend/react-js/male-avatar-img.png',
-  short_bio: 'Lead Software Developer and AI-ML expert',
-};
+const tabs = [
+  {
+    id: 1,
+    name: "Delivery",
+    active_img:
+      "https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png",
+    backdrop: "#FCEEC0",
+    inactive_img:
+      "https://b.zmtcdn.com/data/o2_assets/246bbd71fbba420d5996452be3024d351616150055.png",
+  },
+  {
+    id: 2,
+    name: "Dining Out",
+    active_img:
+      "https://b.zmtcdn.com/data/o2_assets/30fa0a844f3ba82073e5f78c65c18b371616149662.png",
+    backdrop: "#E5F3F3",
+    inactive_img:
+      "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png",
+  },
+  {
+    id: 3,
+    name: "Nightlife",
+    active_img:
+      "https://b.zmtcdn.com/data/o2_assets/855687dc64a5e06d737dae45b7f6a13b1616149818.png",
+    backdrop: "#EDf4FF",
+    inactive_img:
+      "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png",
+  },
+];
+
 
 // Route to get profile details
-app.get('/api/profile', (req, res) => {
-  res.json({ profile_details: profileDetails });
+app.get('/api/tabs', (req, res) => {
+  res.json({ tab_details: tabs });
 });
 
 // Start the server
